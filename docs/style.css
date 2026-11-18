@@ -299,15 +299,17 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
 
 @media (max-width: 960px) {
   .hero-in { grid-template-columns: 1fr; padding-top: 56px; }
-  .hero-vis { height: 300px; }
+  .hero-vis { height: auto; aspect-ratio: 4 / 3; width: 100%; max-width: 620px; margin: 0 auto 24px; }
   .dores ul { grid-template-columns: 1fr 1fr; }
   .pilares, .etapas { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
   .ent-track { grid-auto-columns: 78%; }
   .bens { grid-template-columns: 1fr; }
-  .hero-vis { height: 220px; }
+  .hero-vis { aspect-ratio: 4 / 3.1; margin-bottom: 8px; }
   .hm2 { display: none; }
+  .hm0 { width: 92%; }
+  .hm1 { width: 70%; }
   .dores ul, .pilares, .etapas { grid-template-columns: 1fr; }
   .sobre-in { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .avatar { width: 140px; height: 140px; font-size: 46px; }
