@@ -1,0 +1,25 @@
+{
+  "slug": "crm-vendas",
+  "titulo": "CRM de Vendas B2C + B2B",
+  "categoria": "CRM",
+  "resumo": "CRM sob medida que reúne em um só lugar o funil de vendas para clientes finais e para empresas, com Kanban, SLA por etapa e indicadores em tempo real.",
+  "problema": "O time comercial controlava os leads em planilhas e no WhatsApp, sem saber em que etapa estava cada negociação nem quais estavam paradas. A venda para pessoa física e os contratos corporativos seguiam processos diferentes, e a gestão não tinha números confiáveis de conversão nem de cumprimento de prazos.",
+  "funcionalidades": [
+    "Funil Kanban unificado: pipeline B2C e pipeline B2B completo, da entrada do lead até a expansão de conta",
+    "SLA por etapa calculado automaticamente, com alertas visuais de no prazo, em risco, atrasado e crítico",
+    "Cadastro de clientes e empresas com vários contatos, histórico de negociações e anotações da equipe",
+    "Agenda de atividades (ligações, reuniões, e-mails) vinculadas aos leads, com visão individual ou do time",
+    "Relatórios e KPIs: conversão, perda, aderência de SLA, origem dos leads e motivos de perda",
+    "Permissões por papel (administrador, gestor, vendedor), com etapas, perguntas e templates de e-mail configuráveis",
+    "Login único (SSO) integrado ao portal da empresa"
+  ],
+  "stack": ["Node.js", "Express", "Prisma", "PostgreSQL", "HTML/CSS/JavaScript", "Chart.js", "Nginx", "Docker Compose"],
+  "telas": [
+    {"arquivo": "01-funil-kanban.png", "legenda": "Funil de vendas B2C em Kanban, com SLA calculado em cada card"},
+    {"arquivo": "02-funil-b2b.png", "legenda": "Pipeline corporativo (B2B) com lead score, tags e próxima ação"},
+    {"arquivo": "03-detalhe-lead.png", "legenda": "Detalhe da negociação com dados editáveis, responsável e histórico de anotações"},
+    {"arquivo": "04-leads-b2b.png", "legenda": "Carteira de empresas B2B com a etapa atual de cada uma no funil"},
+    {"arquivo": "05-relatorios.png", "legenda": "Relatórios e KPIs: conversão, perda, aderência de SLA e cards por etapa"},
+    {"arquivo": "06-atividades.png", "legenda": "Agenda de atividades do time vinculadas aos leads"}
+  ]
+}

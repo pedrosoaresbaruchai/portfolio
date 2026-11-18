@@ -1,0 +1,54 @@
+{
+  "slug": "vendas-unidades",
+  "titulo": "Painel Comercial Multiunidade",
+  "categoria": "Dashboard",
+  "resumo": "Painel de vendas quase em tempo real que consolida várias unidades num só lugar, com projeção de fechamento do mês, ranking da equipe comercial, controle de saldos por canal e telas de TV para a sala de vendas.",
+  "problema": "As vendas de contratos ficavam espalhadas em bancos separados, um por unidade, e o acompanhamento dependia de um relatório pesado e de planilhas manuais. A gestão só descobria no fim do mês se a meta seria batida e não sabia quanto cada canal de venda ainda tinha de saldo de contratos. O painel junta todas as bases, aplica as regras de negócio automaticamente e mostra o resultado do dia na web e nas TVs da equipe.",
+  "funcionalidades": [
+    "Consolidação automática de várias bases (uma por unidade), com recarga em horários programados e tolerância a falha de uma unidade",
+    "KPIs do mês comparados ao mês anterior e projeção de fechamento pelo ritmo de dias úteis",
+    "Ranking e tendência dos consultores, vendas do dia e da semana e pontuação de campanhas de incentivo",
+    "Controle de saldos por canal de venda, com regras configuráveis por período de vigência",
+    "Cálculo de comissão por gerente e forma de pagamento, com regras editáveis na própria tela",
+    "Telas de TV para a sala de vendas com acesso por link seguro, além de exportação em PDF e Excel",
+    "Temas claro e escuro com design system próprio e paleta acessível para daltonismo"
+  ],
+  "stack": [
+    "Python",
+    "Plotly Dash",
+    "Pandas",
+    "Firebird (firebird-driver)",
+    "SQLite",
+    "fpdf2",
+    "openpyxl",
+    "Gunicorn",
+    "Docker",
+    "Caddy (proxy reverso)"
+  ],
+  "telas": [
+    {
+      "arquivo": "01-performance.png",
+      "legenda": "Visão do mês: KPIs, contratos dos últimos 12 meses por unidade, projeção de fechamento e mix de formas de pagamento"
+    },
+    {
+      "arquivo": "02-consultores.png",
+      "legenda": "Equipe comercial: tendência de cada consultor, ranking por forma de pagamento, vendas do dia e acumulado por unidade"
+    },
+    {
+      "arquivo": "03-caixas.png",
+      "legenda": "Controle de saldos: contratos por canal de venda e saldo devido x utilizado conforme as regras vigentes"
+    },
+    {
+      "arquivo": "04-tv-performance.png",
+      "legenda": "Tela de TV com o resultado consolidado do mês e a projeção de fechamento"
+    },
+    {
+      "arquivo": "05-tv-consultores.png",
+      "legenda": "Tela de TV com o ranking da equipe, vendas da semana e pontos da campanha ativa"
+    },
+    {
+      "arquivo": "06-comissao.png",
+      "legenda": "Comissão por gerente: direito calculado pelas regras, contratos vendidos e saldo do mês"
+    }
+  ]
+}

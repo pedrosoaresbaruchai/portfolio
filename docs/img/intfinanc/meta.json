@@ -1,0 +1,24 @@
+{
+  "slug": "intfinanc",
+  "titulo": "IntFinanc — DRE gerencial e fluxo de caixa",
+  "categoria": "Financeiro",
+  "resumo": "Transforma o extrato de movimentos do ERP em DRE gerencial, fluxo de caixa e resultado por unidade em poucos cliques, sem planilhas manuais.",
+  "problema": "A empresa tinha apenas o relatório de movimentos financeiros do ERP, e fechar a DRE do mês exigia horas de planilha, com critérios de classificação que mudavam a cada fechamento. Valores de clientes repassados a fornecedores se misturavam com a receita e distorciam o resultado. Não havia visão por unidade de negócio nem comparação entre regime de caixa e de competência.",
+  "funcionalidades": [
+    "Importação do movimento financeiro do ERP (Excel) com substituição segura por período",
+    "DRE gerencial em árvore (grupo › subgrupo › conta), por mês ou por unidade, com análise vertical e detalhamento até o lançamento",
+    "Visão geral com KPIs, cascata da receita ao resultado, receitas × despesas por mês e resultado por unidade",
+    "Fluxo de caixa com geração acumulada, separação por natureza (operacional, terceiros, patrimonial) e por conta bancária",
+    "Plano de contas hierárquico com herança de grupos da DRE e edição de exceções direto na tela",
+    "Filtros globais de regime (caixa/competência), período e unidades, com exportação para Excel"
+  ],
+  "stack": ["Python", "Plotly Dash", "Pandas", "SQLite", "Plotly", "openpyxl", "pdfplumber"],
+  "telas": [
+    {"arquivo": "01-visao-geral.png", "legenda": "Visão geral: KPIs do período e cascata da DRE, da receita bruta ao resultado líquido"},
+    {"arquivo": "02-receitas-despesas-filiais.png", "legenda": "Sazonalidade mensal, resultado por unidade, composição da receita e maiores despesas"},
+    {"arquivo": "03-dre.png", "legenda": "DRE gerencial por mês em árvore expansível, com total e análise vertical"},
+    {"arquivo": "04-fluxo-de-caixa.png", "legenda": "Fluxo de caixa: entradas, saídas e geração de caixa acumulada nas contas bancárias"},
+    {"arquivo": "05-plano-de-contas.png", "legenda": "Plano de contas hierárquico com o grupo da DRE herdado ou definido em cada nó"},
+    {"arquivo": "06-lancamentos.png", "legenda": "Movimento detalhado com filtros por grupo, busca e exportação"}
+  ]
+}

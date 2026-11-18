@@ -1,0 +1,54 @@
+{
+  "nome": "Pedro Soares",
+  "eyebrow": "Dashboards · CRMs · Automações com WhatsApp",
+  "titulo": "Pare de gerir sua empresa no escuro.",
+  "titulo_destaque": "Tenha os números na tela e a rotina no automático.",
+  "subtitulo": "Construo painéis de gestão, CRMs e automações sob medida que conectam os sistemas que você já usa — para você decidir com dados, vender mais e parar de perder dinheiro por falta de controle.",
+  "dores_titulo": "Isso acontece na sua empresa?",
+  "dores": [
+    "Relatórios que levam dias e chegam desatualizados",
+    "Leads que esfriam sem resposta no WhatsApp",
+    "Inadimplência crescendo sem um processo de cobrança",
+    "Equipe esquecendo tarefas, retornos e vencimentos",
+    "Dados espalhados em sistemas e planilhas que não conversam",
+    "Você só descobre que a meta não bateu no fim do mês"
+  ],
+  "cta_principal": "Quero resolver isso",
+  "cta_secundario": "Ver projetos",
+  "hero_imgs": [
+    ["comercial-financeiro", "01-resultado-financeiro.png"],
+    ["crm-vendas", "01-funil-kanban.png"],
+    ["gestores", "01-consultores.png"]
+  ],
+  "sobre": {
+    "titulo": "Prazer, eu sou o Pedro.",
+    "foto": "",
+    "texto": [
+      "Trabalho dentro da operação de um grupo empresarial com várias empresas, construindo as ferramentas que diretoria, gestores, vendedores, cobrança e financeiro usam todos os dias para trabalhar.",
+      "Antes de escrever uma linha de código, eu entendo como o seu negócio funciona: de onde vêm os dados, quem decide o quê e onde o tempo e o dinheiro estão escapando. Só então construo a solução — do jeito que a sua equipe trabalha, e não o contrário."
+    ],
+    "pilares": [
+      {"titulo": "Visão de negócio", "texto": "Falo a língua do gestor: meta, margem, comissão, inadimplência e fluxo de caixa."},
+      {"titulo": "Sob medida de verdade", "texto": "Nada de sistema engessado. A ferramenta se adapta à sua rotina e aos seus sistemas."},
+      {"titulo": "Entrega rápida", "texto": "Primeira versão funcionando em semanas, com os seus dados, e evolução contínua."},
+      {"titulo": "Atendimento direto", "texto": "Você fala comigo, sem intermediários, sem fila de chamado."}
+    ]
+  },
+  "etapas": [
+    {"titulo": "Conversa", "texto": "Entendo sua operação, suas dores e o que você precisa enxergar."},
+    {"titulo": "Protótipo", "texto": "Mostro uma primeira versão com os seus dados reais."},
+    {"titulo": "Implantação", "texto": "Coloco no ar, conecto aos seus sistemas e treino a equipe."},
+    {"titulo": "Evolução", "texto": "Acompanho o uso e ajusto conforme o negócio muda."}
+  ],
+  "email": "",
+  "whatsapp": "+55 34 99150-6436",
+  "linkedin": "",
+  "ordem": [
+    "comercial-financeiro",
+    "vendas-unidades",
+    "gestores",
+    "intfinanc",
+    "crm-vendas",
+    "crm-cobranca"
+  ]
+}

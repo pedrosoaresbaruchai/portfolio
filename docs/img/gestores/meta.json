@@ -1,0 +1,25 @@
+{
+  "slug": "gestores",
+  "titulo": "Painel Operacional de Gestão Comercial",
+  "categoria": "Dashboard",
+  "resumo": "Painel diário para gestores comerciais acompanharem a equipe de vendas: ranking, tendência de cada consultor, vendas do dia por unidade e campanhas de incentivo em um só lugar.",
+  "problema": "Os gestores dependiam de relatórios manuais e de consultas separadas na base de cada unidade para saber quem estava vendendo, quem estava caindo e como o mês se comparava ao anterior. Não havia uma visão única da equipe, nem uma leitura rápida da tendência de cada consultor. As campanhas de incentivo eram apuradas em planilhas, com atraso e sujeitas a erro.",
+  "funcionalidades": [
+    "Ranking de consultores por contratos vendidos, com o mix de formas de pagamento em barras empilhadas",
+    "Detecção automática de tendência: crescimento contínuo, queda contínua e queda forte no último mês",
+    "Visão gerencial por consultor com KPIs do trimestre, posição no ranking mês a mês e leitura gerencial gerada automaticamente",
+    "Vendas do dia e da semana comparadas com a semana anterior, com status report diário exportável em PDF",
+    "Vendas acumuladas no mês por unidade, comparadas dia a dia com o mês anterior",
+    "Cadastro e apuração de campanhas de pontos por forma de pagamento, com ranking de consultores e exportação em PDF",
+    "Integração com várias bases do ERP, tema claro/escuro e atualização automática após cada carga"
+  ],
+  "stack": ["Python", "Plotly Dash", "Pandas", "Firebird", "fpdf2", "Docker", "Gunicorn"],
+  "telas": [
+    {"arquivo": "01-consultores.png", "legenda": "Tela principal: tendência dos consultores nos últimos 3 meses e ranking da equipe com mix de pagamento"},
+    {"arquivo": "02-visao-gerencial.png", "legenda": "Visão gerencial de um consultor: KPIs do trimestre, vendas por mês e forma de pagamento e posição no ranking"},
+    {"arquivo": "03-status-report-dia.png", "legenda": "Status report do dia por unidade, com formas de pagamento e consultores, exportável em PDF"},
+    {"arquivo": "04-vendas-do-dia.png", "legenda": "Vendas do dia: contratos, consultores ativos, formas de pagamento e comparação com a semana anterior"},
+    {"arquivo": "05-mes-por-unidade.png", "legenda": "Vendas acumuladas no mês por unidade, comparadas dia a dia com o mês anterior"},
+    {"arquivo": "06-campanha.png", "legenda": "Resultado de uma campanha de incentivo: pontos por forma de pagamento, por unidade e ranking de consultores"}
+  ]
+}

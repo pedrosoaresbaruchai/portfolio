@@ -1,0 +1,43 @@
+{
+  "slug": "comercial-financeiro",
+  "titulo": "Painel Comercial e Financeiro",
+  "categoria": "Dashboard",
+  "resumo": "Transforma relatórios exportados do sistema de gestão em um painel web com faturamento, receita, projeção anual e desempenho de cada vendedor, atualizado em poucos cliques.",
+  "problema": "A empresa dependia de planilhas exportadas do sistema de gestão (vendas, comissões e cadastro de vendedores) e de cálculos manuais para saber quanto faturou, quanto realmente sobrou de receita e como cada vendedor estava indo. Comparar com o ano anterior, acompanhar metas e projetar o fechamento do ano levava horas e era sujeito a erro.",
+  "funcionalidades": [
+    "Importação das planilhas do sistema (vendas, comissões, vendedores) por arrastar e soltar, com atualização automática do banco",
+    "Indicadores do mês: faturamento, receita bruta, despesas e receita líquida, com margem sobre o faturamento",
+    "Projeção da receita anual com alertas do ritmo necessário para superar o ano anterior",
+    "Comparativos anuais por trimestre ou mês: ano atual x anterior e meta x realizado",
+    "Ranking de vendedores (Top 5 e alerta de desempenho) por receita líquida, com comparativo individual dos últimos 6 meses",
+    "Cadastro de metas mensais por unidade, escaladas pelo número de vendedores ativos",
+    "Modo TV em tela cheia para acompanhar o resultado ao vivo no escritório"
+  ],
+  "stack": [
+    "Python",
+    "Plotly Dash",
+    "Pandas",
+    "PostgreSQL",
+    "SQLAlchemy",
+    "Docker",
+    "Nginx/Caddy (proxy reverso)"
+  ],
+  "telas": [
+    {
+      "arquivo": "01-resultado-financeiro.png",
+      "legenda": "Painel financeiro: indicadores do mês, margem líquida e projeção da receita anual com alertas de ritmo"
+    },
+    {
+      "arquivo": "02-comparativos-anuais.png",
+      "legenda": "Comparativos anuais por trimestre (ano x ano anterior e meta x realizado) e evolução de comissões e receita líquida"
+    },
+    {
+      "arquivo": "03-gestao-operacional.png",
+      "legenda": "Gestão comercial: Top 5 vendedores e alerta de desempenho, classificados por receita líquida"
+    },
+    {
+      "arquivo": "04-comparativo-vendedores.png",
+      "legenda": "Ranking completo da equipe e comparativo de receita líquida por vendedor nos últimos 6 meses"
+    }
+  ]
+}

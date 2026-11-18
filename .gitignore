@@ -1,0 +1,7 @@
+# demos locais com código dos clientes e dados fake - NÃO publicar
+_demo/
+**/.env
+**/node_modules/
+**/.venv/
+**/__pycache__/
+*.log

@@ -1,0 +1,117 @@
+{
+  "titulo": "Automações com n8n + WhatsApp",
+  "subtitulo": "Fluxos que trabalham sozinhos: lembram a equipe, avisam o gestor, respondem o cliente e alimentam o CRM — sem ninguém precisar apertar um botão.",
+  "itens": [
+    {
+      "id": "lembretes",
+      "titulo": "Alertas de tarefas e lembretes no grupo da equipe",
+      "resumo": "Todo dia, no horário combinado, o grupo da equipe recebe as tarefas do dia, quem é o responsável e o que está atrasado.",
+      "beneficios": [
+        "Ninguém esquece retorno de cliente, visita ou vencimento",
+        "Gestor enxerga atrasos sem abrir sistema nenhum",
+        "Lembretes individuais no privado de cada colaborador",
+        "Funciona com CRM, planilha Google ou banco de dados"
+      ],
+      "fluxo": [
+        {"tipo": "clock", "nome": "Agendamento", "det": "Seg–Sáb, 08h e 14h"},
+        {"tipo": "db", "nome": "Buscar tarefas", "det": "CRM / Postgres"},
+        {"tipo": "filter", "nome": "Filtrar", "det": "hoje + atrasadas"},
+        {"tipo": "code", "nome": "Montar mensagem", "det": "agrupa por responsável"},
+        {"tipo": "whatsapp", "nome": "WhatsApp", "det": "grupo da equipe"}
+      ],
+      "mockup": {
+        "tipo": "whatsapp",
+        "chat": "Equipe Comercial",
+        "sub": "Ana, Bruno, Carla, Diego, você",
+        "msgs": [
+          {"de": "Assistente", "hora": "08:00", "txt": "⏰ *Tarefas de hoje — 18/11*\n\n👤 *Ana*\n• 10h — Retornar Marcos Lima (proposta comercial)\n• 15h — Enviar contrato Grupo Rocha\n\n👤 *Bruno*\n• 11h — Reunião Empresa Atlas\n\n⚠️ *Atrasadas (2)*\n• Carla — Follow-up Juliana Prado (há 2 dias)\n• Diego — Boleto Ricardo Alves vence hoje"},
+          {"de": "Ana", "hora": "08:03", "txt": "Bom dia! Já vou ligar pro Marcos 👍"},
+          {"de": "Assistente", "hora": "14:00", "txt": "✅ *Concluídas até agora:* 6 de 9\n🔔 Faltam 3 — bora fechar o dia, time!"}
+        ]
+      }
+    },
+    {
+      "id": "relatorio",
+      "titulo": "Resumo de vendas automático no fim do dia",
+      "resumo": "Às 18h o n8n consulta os sistemas de venda, consolida os números e manda o resumo do dia para a diretoria — em produção hoje, lendo 4 bancos de dados diferentes.",
+      "beneficios": [
+        "Diretoria recebe o resultado no celular, todo dia, no mesmo horário",
+        "Consolida vários sistemas/bancos em uma mensagem só",
+        "Comparativo com o dia e o mês anterior",
+        "Sem depender de alguém montar planilha"
+      ],
+      "fluxo": [
+        {"tipo": "clock", "nome": "Agendamento", "det": "todo dia 18h"},
+        {"tipo": "api", "nome": "Serviço Python", "det": "consulta 4 bancos"},
+        {"tipo": "code", "nome": "Consolidar", "det": "totais + comparativos"},
+        {"tipo": "whatsapp", "nome": "WhatsApp", "det": "grupo diretoria"}
+      ],
+      "mockup": {
+        "tipo": "whatsapp",
+        "chat": "Diretoria",
+        "sub": "4 participantes",
+        "msgs": [
+          {"de": "Assistente", "hora": "18:00", "txt": "📊 *Vendas do dia — 18/11*\n\n🏢 Unidade Centro: 9 contratos · R$ 86,4 mil\n🏢 Unidade Norte: 6 contratos · R$ 52,1 mil\n🏢 Unidade Sul: 7 contratos · R$ 63,9 mil\n🌐 Online: 3 contratos · R$ 24,7 mil\n\n*Total: 25 contratos · R$ 227,1 mil*\n📈 +12% vs ontem · Mês: 253 contratos"},
+          {"de": "Você", "hora": "18:02", "txt": "Excelente dia! 👏", "eu": true}
+        ]
+      }
+    },
+    {
+      "id": "emails",
+      "titulo": "E-mails automáticos no momento certo",
+      "resumo": "Cada evento do negócio dispara o e-mail certo: boas-vindas, proposta, lembrete de vencimento, pesquisa de satisfação — com a cara da sua marca.",
+      "beneficios": [
+        "Templates em HTML com logo e dados do cliente",
+        "Lembrete de boleto 3 dias antes e no dia do vencimento",
+        "Pesquisa de satisfação automática após o atendimento",
+        "Tudo registrado no histórico do cliente no CRM"
+      ],
+      "fluxo": [
+        {"tipo": "webhook", "nome": "Evento", "det": "boleto / venda / atendimento"},
+        {"tipo": "branch", "nome": "Tipo de aviso", "det": "escolhe o template"},
+        {"tipo": "code", "nome": "Personalizar", "det": "nome, valores, datas"},
+        {"tipo": "mail", "nome": "Enviar e-mail", "det": "Gmail / SMTP"},
+        {"tipo": "db", "nome": "Registrar", "det": "histórico no CRM"}
+      ],
+      "mockup": {
+        "tipo": "email",
+        "de": "{{marca}} <contato@{{marca}}.com.br>",
+        "para": "juliana.prado@exemplo.com",
+        "assunto": "Juliana, seu boleto vence em 3 dias 🗓️",
+        "corpo": "Olá, Juliana!\n\nPassando para lembrar que a parcela 4/10 do seu *Plano Premium* vence em *21/11* no valor de *R$ 389,90*.\n\nSe já pagou, pode desconsiderar esta mensagem. 😊",
+        "botao": "Ver boleto e copiar código"
+      }
+    },
+    {
+      "id": "captacao",
+      "titulo": "Captação de leads e primeiro contato em minutos",
+      "resumo": "O lead que chega pelo site, Instagram ou anúncio entra no CRM, recebe uma mensagem no WhatsApp em até 2 minutos e, se não responder, ganha follow-up por e-mail — e o vendedor é avisado.",
+      "beneficios": [
+        "Lead nunca fica esperando: resposta em minutos, 24h por dia",
+        "Captura de formulário do site, Meta Lead Ads e landing pages",
+        "Remove duplicados e distribui entre vendedores (rodízio)",
+        "Follow-up automático por e-mail se não houver resposta",
+        "Vendedor recebe o lead no WhatsApp com tudo que precisa"
+      ],
+      "fluxo": [
+        {"tipo": "webhook", "nome": "Novo lead", "det": "site / Instagram / anúncio"},
+        {"tipo": "filter", "nome": "Deduplicar", "det": "telefone + e-mail"},
+        {"tipo": "db", "nome": "Criar no CRM", "det": "rodízio de vendedor"},
+        {"tipo": "whatsapp", "nome": "1º contato", "det": "mensagem personalizada"},
+        {"tipo": "wait", "nome": "Aguardar", "det": "24h sem resposta"},
+        {"tipo": "mail", "nome": "Follow-up", "det": "e-mail + aviso ao vendedor"}
+      ],
+      "mockup": {
+        "tipo": "whatsapp",
+        "chat": "Marcos Lima",
+        "sub": "online",
+        "msgs": [
+          {"de": "Empresa", "hora": "21:47", "txt": "Oi, Marcos! Aqui é da *{{marca}}* 👋\n\nVi que você se interessou pelo *Plano Empresarial*. Posso te mandar uma proposta com os valores para a sua equipe?", "eu": true},
+          {"de": "Marcos", "hora": "21:52", "txt": "Oi! Pode sim, somos 15 pessoas aqui"},
+          {"de": "Empresa", "hora": "21:52", "txt": "Perfeito! Já passei para a Ana, nossa consultora — ela te chama amanhã cedo com a proposta detalhada 📄", "eu": true}
+        ]
+      }
+    }
+  ],
+  "stack": ["n8n", "Evolution API (WhatsApp)", "Python", "PostgreSQL", "Gmail / SMTP", "Webhooks", "Meta Lead Ads", "Docker"]
+}

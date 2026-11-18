@@ -1,0 +1,25 @@
+{
+  "slug": "crm-cobranca",
+  "titulo": "CRM de Cobrança e Recuperação de Crédito",
+  "categoria": "CRM",
+  "resumo": "Sistema de cobrança que transforma a planilha de inadimplentes em uma fila distribuída automaticamente entre os operadores, com funil de negociação, acordos parcelados e KPIs de recuperação em tempo real.",
+  "problema": "A cobrança de clientes inadimplentes era feita a partir de planilhas enviadas por cada unidade, sem controle de quem atendia quem, do histórico de contatos ou dos acordos fechados. A gestão não tinha visão do valor em aberto, do valor recuperado nem da produtividade de cada operador.",
+  "funcionalidades": [
+    "Importação da planilha de inadimplentes com fila priorizada por meses em atraso ou valor da dívida",
+    "Distribuição automática da fila: cada operador recebe até 5 cobranças por vez, com envio manual pelo gestor",
+    "Funil Kanban com arrastar e soltar, SLA por etapa, valor em aberto por coluna e filtros por unidade e operador",
+    "Registro de acordos (entrada + parcelamento em boleto, cartão ou Pix), renegociação por competência e histórico de contatos",
+    "Agenda de ligações, retornos e próximas ações vinculadas a cada cobrança",
+    "Relatórios & KPIs: valor em aberto e recuperado, taxas de recuperação e perda, faixas de atraso e motivos de perda",
+    "Fechamento mensal por operador e controle de acesso por papel (administrador, gestor, operador)"
+  ],
+  "stack": ["Node.js", "Express", "Prisma", "PostgreSQL", "HTML/CSS/JavaScript", "Chart.js", "Nginx", "Docker Compose"],
+  "telas": [
+    {"arquivo": "01-funil.png", "legenda": "Funil de cobrança em Kanban, com valor em aberto por etapa, dias em atraso, acordos e prazo (SLA) de cada cobrança"},
+    {"arquivo": "02-detalhe-cobranca.png", "legenda": "Detalhe da cobrança: valor, dias e parcelas em atraso, dados do devedor e histórico de contatos"},
+    {"arquivo": "03-relatorios.png", "legenda": "Relatórios & KPIs: valor em aberto, valor recuperado, taxas de recuperação e perda e cobranças por etapa"},
+    {"arquivo": "04-encerrados.png", "legenda": "Fechamento do mês: cobranças recuperadas e perdidas e o resultado de cada operador"},
+    {"arquivo": "05-fila.png", "legenda": "Fila de inadimplentes importada da planilha, pronta para distribuição automática entre os operadores"},
+    {"arquivo": "06-minhas-atividades.png", "legenda": "Agenda de ligações, retornos e tarefas vinculadas aos devedores em cobrança"}
+  ]
+}
