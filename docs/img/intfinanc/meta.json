@@ -12,13 +12,72 @@
     "Plano de contas hierárquico com herança de grupos da DRE e edição de exceções direto na tela",
     "Filtros globais de regime (caixa/competência), período e unidades, com exportação para Excel"
   ],
-  "stack": ["Python", "Plotly Dash", "Pandas", "SQLite", "Plotly", "openpyxl", "pdfplumber"],
+  "stack": [
+    "Python",
+    "Plotly Dash",
+    "Pandas",
+    "SQLite",
+    "Plotly",
+    "openpyxl",
+    "pdfplumber"
+  ],
   "telas": [
-    {"arquivo": "01-visao-geral.png", "legenda": "Visão geral: KPIs do período e cascata da DRE, da receita bruta ao resultado líquido"},
-    {"arquivo": "02-receitas-despesas-filiais.png", "legenda": "Sazonalidade mensal, resultado por unidade, composição da receita e maiores despesas"},
-    {"arquivo": "03-dre.png", "legenda": "DRE gerencial por mês em árvore expansível, com total e análise vertical"},
-    {"arquivo": "04-fluxo-de-caixa.png", "legenda": "Fluxo de caixa: entradas, saídas e geração de caixa acumulada nas contas bancárias"},
-    {"arquivo": "05-plano-de-contas.png", "legenda": "Plano de contas hierárquico com o grupo da DRE herdado ou definido em cada nó"},
-    {"arquivo": "06-lancamentos.png", "legenda": "Movimento detalhado com filtros por grupo, busca e exportação"}
+    {
+      "arquivo": "01-visao-geral.png",
+      "legenda": "Visão geral: KPIs do período e cascata da DRE, da receita bruta ao resultado líquido"
+    },
+    {
+      "arquivo": "02-receitas-despesas-filiais.png",
+      "legenda": "Sazonalidade mensal, resultado por unidade, composição da receita e maiores despesas"
+    },
+    {
+      "arquivo": "03-dre.png",
+      "legenda": "DRE gerencial por mês em árvore expansível, com total e análise vertical"
+    },
+    {
+      "arquivo": "04-fluxo-de-caixa.png",
+      "legenda": "Fluxo de caixa: entradas, saídas e geração de caixa acumulada nas contas bancárias"
+    },
+    {
+      "arquivo": "05-plano-de-contas.png",
+      "legenda": "Plano de contas hierárquico com o grupo da DRE herdado ou definido em cada nó"
+    },
+    {
+      "arquivo": "06-lancamentos.png",
+      "legenda": "Movimento detalhado com filtros por grupo, busca e exportação"
+    }
+  ],
+  "dor": "Fechar a DRE levava horas de planilha, com critérios que mudavam todo mês e repasses distorcendo a receita.",
+  "entregas": [
+    {
+      "ico": "upload",
+      "titulo": "Importação do ERP",
+      "texto": "Movimento financeiro em Excel, com substituição segura por período."
+    },
+    {
+      "ico": "layers",
+      "titulo": "DRE em árvore",
+      "texto": "Grupo › subgrupo › conta, com detalhe até o lançamento."
+    },
+    {
+      "ico": "gauge",
+      "titulo": "Visão geral",
+      "texto": "KPIs, cascata da receita ao resultado e resultado por unidade."
+    },
+    {
+      "ico": "trend",
+      "titulo": "Fluxo de caixa",
+      "texto": "Geração acumulada por natureza e por conta bancária."
+    },
+    {
+      "ico": "list",
+      "titulo": "Plano de contas",
+      "texto": "Hierárquico, com herança de grupos e exceções editáveis."
+    },
+    {
+      "ico": "filter",
+      "titulo": "Caixa × competência",
+      "texto": "Filtros globais por regime, período e unidade, com exportação."
+    }
   ]
 }

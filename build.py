@@ -30,6 +30,51 @@ def img_src(slug, arq):
     return f"img/{slug}/{quote(arq)}"
 
 
+_I = {
+    "upload": '<path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>',
+    "gauge": '<path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/>',
+    "trend": '<path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>',
+    "chart": '<path d="M5 20V11M11 20V5M17 20v-7M3 20h18"/>',
+    "trophy": '<path d="M8 21h8M12 16v5M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+    "target": '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    "tv": '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    "db": '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+    "money": '<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/>',
+    "users": '<circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/>',
+    "kanban": '<rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="10" rx="1"/><rect x="17" y="4" width="4" height="13" rx="1"/>',
+    "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    "calendar": '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    "lock": '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    "key": '<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>',
+    "layers": '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+    "list": '<path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/>',
+    "filter": '<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',
+    "sun": '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    "percent": '<path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',
+    "alert": '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/>',
+    "bulb": '<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>',
+    "star": '<path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3l-5.5 2.9 1-6.2L3 9.6l6.2-.9z"/>',
+    "refresh": '<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',
+    "shuffle": '<path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',
+    "check": '<path d="M20 6L9 17l-5-5"/>',
+}
+FEAT_ICONS = {k: f'<svg viewBox="0 0 24 24" aria-hidden="true">{v}</svg>' for k, v in _I.items()}
+
+
+def tem_video(slug):
+    return (SITE / "vid" / f"{slug}.mp4").exists()
+
+
+def vid_src(slug):
+    return f"vid/{quote(slug)}.mp4"
+
+
+def video_tag(slug, alt=""):
+    poster = f'vid/{quote(slug)}.jpg' if (SITE / "vid" / f"{slug}.jpg").exists() else ""
+    return (f'<video class="vid" muted loop playsinline preload="none" data-src="{vid_src(slug)}"'
+            f'{f" poster={chr(34)}{poster}{chr(34)}" if poster else ""} aria-label="{e(alt)}"></video>')
+
+
 def card(p, i):
     slug = p["slug"]
     telas = p["telas"]
@@ -39,27 +84,50 @@ def card(p, i):
         f'aria-label="Ampliar: {e(t.get("legenda", ""))}"><img loading="lazy" src="{img_src(slug, t["arquivo"])}" alt="{e(t.get("legenda", ""))}"></button>'
         for t in telas
     )
-    feats = "".join(f"<li>{e(f)}</li>" for f in p.get("funcionalidades", []))
+
     stack = "".join(f'<span class="chip">{e(s)}</span>' for s in p.get("stack", []))
     lado = "rev" if i % 2 else ""
-    return f"""
-<section class="proj {lado}" id="{slug}" data-cat="{e(p.get('categoria', ''))}">
-  <div class="shot">
+    if tem_video(slug):
+        midia = f"""
+    <button class="main-shot is-video" data-video="{vid_src(slug)}" data-cap="{e(p['titulo'])}" aria-label="Ver demonstração em tela cheia">
+      <div class="browser"><span></span><span></span><span></span><em>demonstração ao vivo</em></div>
+      {video_tag(slug)}
+      <span class="expand" aria-hidden="true">⤢ Tela cheia</span>
+    </button>"""
+    else:
+        midia = f"""
     <button class="main-shot" data-full="{img_src(slug, principal['arquivo'])}" data-cap="{e(principal.get('legenda', ''))}" aria-label="Ampliar imagem">
       <div class="browser"><span></span><span></span><span></span></div>
       <img loading="lazy" src="{img_src(slug, principal['arquivo'])}" alt="{e(principal.get('legenda', ''))}">
     </button>
-    <div class="thumbs">{thumbs}</div>
+    <div class="thumbs">{thumbs}</div>"""
+    if p.get("entregas"):
+        ent_cards = "".join(
+            f'<article class="ent"><span class="ent-ico">{FEAT_ICONS.get(x.get("ico"), FEAT_ICONS["check"])}</span>'
+            f'<b>{e(x["titulo"])}</b><p>{e(x["texto"])}</p></article>' for x in p["entregas"])
+    else:
+        ent_cards = "".join(f'<article class="ent"><span class="ent-ico">{FEAT_ICONS["check"]}</span><p>{e(f)}</p></article>'
+                            for f in p.get("funcionalidades", []))
+    dor = p.get("dor") or p.get("problema", "")
+    return f"""
+<section class="proj" id="{slug}" data-cat="{e(p.get('categoria', ''))}">
+  <div class="proj-grid {lado}">
+    <div class="shot">{midia}
+    </div>
+    <div class="info">
+      <span class="cat">{e(p.get('categoria', ''))}</span>
+      <h2>{e(p['titulo'])}</h2>
+      <p class="resumo">{e(p.get('resumo', ''))}</p>
+      <div class="dor"><span class="dor-tag">{FEAT_ICONS['alert']}O problema</span><p>{e(dor)}</p></div>
+      <div class="stack">{stack}</div>
+    </div>
   </div>
-  <div class="info">
-    <span class="cat">{e(p.get('categoria', ''))}</span>
-    <h2>{e(p['titulo'])}</h2>
-    <p class="resumo">{e(p.get('resumo', ''))}</p>
-    <h3>O problema</h3>
-    <p>{e(p.get('problema', ''))}</p>
-    <h3>O que entrega</h3>
-    <ul class="feats">{feats}</ul>
-    <div class="stack">{stack}</div>
+  <div class="entregas">
+    <div class="ent-head">
+      <h3>O que entrega</h3>
+      <div class="ent-nav"><button class="ent-prev" aria-label="Anterior">‹</button><button class="ent-next" aria-label="Próximo">›</button></div>
+    </div>
+    <div class="ent-track">{ent_cards}</div>
   </div>
 </section>"""
 
@@ -159,13 +227,13 @@ if auto_path.exists():
     A = json.loads(auto_path.read_text(encoding="utf-8"))
     blocos = []
     for it in A["itens"]:
-        bens = "".join(f"<li>{e(b)}</li>" for b in it.get("beneficios", []))
+        bens = "".join(f'<li>{FEAT_ICONS["check"]}<span>{e(b)}</span></li>' for b in it.get("beneficios", []))
         blocos.append(f"""
   <article class="auto" id="auto-{e(it['id'])}">
     <div class="auto-txt">
       <h3>{e(it['titulo'])}</h3>
       <p>{e(it['resumo'])}</p>
-      <ul class="feats">{bens}</ul>
+      <ul class="bens">{bens}</ul>
     </div>
     <div class="auto-mock">{mockup_html(it['mockup'])}</div>
     {fluxo_html(it['fluxo'])}
@@ -195,7 +263,8 @@ dores = "".join(f"<li>{CHECK_X}<span>{e(d)}</span></li>" for d in cfg.get("dores
 hero_imgs = [(s, a) for s, a in cfg.get("hero_imgs", []) if (SITE / "img" / s / a).exists()]
 mosaico = "".join(
     f'<div class="hm hm{i}"><div class="browser"><span></span><span></span><span></span></div>'
-    f'<img src="{img_src(s, a)}" alt="" loading="{"eager" if i == 0 else "lazy"}"></div>'
+    + (video_tag(s) if tem_video(s) else f'<img src="{img_src(s, a)}" alt="" loading="{"eager" if i == 0 else "lazy"}">')
+    + '</div>'
     for i, (s, a) in enumerate(hero_imgs[:3]))
 cta1 = (f'<a class="btn wa lg" href="{wa_url}" target="_blank" rel="noopener">{WA_ICON}{e(cfg.get("cta_principal", "Fale comigo"))}</a>'
         if wa_url else f'<a class="btn lg" href="#contato">{e(cfg.get("cta_principal", "Fale comigo"))}</a>')
@@ -244,6 +313,11 @@ if S:
   </div>
 </section>"""
 
+og_img = ""
+if projetos:
+    p0 = projetos[0]["slug"]
+    og_img = f"vid/{p0}.jpg" if (SITE / "vid" / f"{p0}.jpg").exists() else img_src(p0, projetos[0]["telas"][0]["arquivo"])
+
 page = f"""<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -253,7 +327,7 @@ page = f"""<!doctype html>
 <meta name="description" content="{e(cfg['subtitulo'])}">
 <meta property="og:title" content="{e(cfg['nome'])} · Portfólio">
 <meta property="og:description" content="{e(cfg['subtitulo'])}">
-{f'<meta property="og:image" content="{img_src(projetos[0]["slug"], projetos[0]["telas"][0]["arquivo"])}">' if projetos else ''}
+{f'<meta property="og:image" content="{og_img}">' if og_img else ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -271,7 +345,7 @@ page = f"""<!doctype html>
 <div class="sec-head" id="projetos">
   <span class="cat">Projetos</span>
   <h2>Ferramentas que já rodam no dia a dia de empresas reais</h2>
-  <p class="note">Telas com dados fictícios e nome da empresa ocultado para preservar o sigilo dos clientes.</p>
+  <p class="note">Demonstrações gravadas com dados fictícios e nome da empresa ocultado para preservar o sigilo dos clientes. Clique em um vídeo para ver em tela cheia.</p>
 </div>
 
 <div class="filters">{filtros}</div>
@@ -291,7 +365,7 @@ page = f"""<!doctype html>
 
 <div class="lb" id="lb" hidden>
   <button class="lb-x" aria-label="Fechar">×</button>
-  <figure><img alt=""><figcaption></figcaption></figure>
+  <figure><img alt=""><video controls muted loop playsinline hidden></video><figcaption></figcaption></figure>
 </div>
 <script src="app.js"></script>
 </body>
@@ -299,4 +373,4 @@ page = f"""<!doctype html>
 """
 (SITE / "index.html").write_text(page, encoding="utf-8")
 (SITE / ".nojekyll").write_text("", encoding="utf-8")
-print(f"OK: {len(projetos)} projetos, {sum(len(p["telas"]) for p in projetos)} telas -> docs/index.html")
+print(f"OK: {len(projetos)} projetos, {sum(tem_video(p['slug']) for p in projetos)} com vídeo -> docs/index.html")

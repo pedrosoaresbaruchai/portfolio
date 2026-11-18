@@ -39,5 +39,43 @@
       "arquivo": "04-comparativo-vendedores.png",
       "legenda": "Ranking completo da equipe e comparativo de receita líquida por vendedor nos últimos 6 meses"
     }
+  ],
+  "dor": "Faturamento, receita e desempenho dos vendedores dependiam de planilhas e horas de cálculo manual, sempre com risco de erro.",
+  "entregas": [
+    {
+      "ico": "upload",
+      "titulo": "Importação arrastando",
+      "texto": "Solta a planilha do sistema e o banco se atualiza sozinho."
+    },
+    {
+      "ico": "gauge",
+      "titulo": "Indicadores do mês",
+      "texto": "Faturamento, receita, despesas e margem em um olhar."
+    },
+    {
+      "ico": "trend",
+      "titulo": "Projeção anual",
+      "texto": "Alerta do ritmo necessário para superar o ano anterior."
+    },
+    {
+      "ico": "chart",
+      "titulo": "Comparativos",
+      "texto": "Ano atual × anterior e meta × realizado, por trimestre ou mês."
+    },
+    {
+      "ico": "trophy",
+      "titulo": "Ranking de vendedores",
+      "texto": "Top 5, alerta de desempenho e histórico de 6 meses."
+    },
+    {
+      "ico": "target",
+      "titulo": "Metas por unidade",
+      "texto": "Metas mensais escaladas pelo número de vendedores ativos."
+    },
+    {
+      "ico": "tv",
+      "titulo": "Modo TV",
+      "texto": "Resultado ao vivo em tela cheia no escritório."
+    }
   ]
 }

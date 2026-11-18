@@ -13,13 +13,78 @@
     "Relatórios & KPIs: valor em aberto e recuperado, taxas de recuperação e perda, faixas de atraso e motivos de perda",
     "Fechamento mensal por operador e controle de acesso por papel (administrador, gestor, operador)"
   ],
-  "stack": ["Node.js", "Express", "Prisma", "PostgreSQL", "HTML/CSS/JavaScript", "Chart.js", "Nginx", "Docker Compose"],
+  "stack": [
+    "Node.js",
+    "Express",
+    "Prisma",
+    "PostgreSQL",
+    "HTML/CSS/JavaScript",
+    "Chart.js",
+    "Nginx",
+    "Docker Compose"
+  ],
   "telas": [
-    {"arquivo": "01-funil.png", "legenda": "Funil de cobrança em Kanban, com valor em aberto por etapa, dias em atraso, acordos e prazo (SLA) de cada cobrança"},
-    {"arquivo": "02-detalhe-cobranca.png", "legenda": "Detalhe da cobrança: valor, dias e parcelas em atraso, dados do devedor e histórico de contatos"},
-    {"arquivo": "03-relatorios.png", "legenda": "Relatórios & KPIs: valor em aberto, valor recuperado, taxas de recuperação e perda e cobranças por etapa"},
-    {"arquivo": "04-encerrados.png", "legenda": "Fechamento do mês: cobranças recuperadas e perdidas e o resultado de cada operador"},
-    {"arquivo": "05-fila.png", "legenda": "Fila de inadimplentes importada da planilha, pronta para distribuição automática entre os operadores"},
-    {"arquivo": "06-minhas-atividades.png", "legenda": "Agenda de ligações, retornos e tarefas vinculadas aos devedores em cobrança"}
+    {
+      "arquivo": "01-funil.png",
+      "legenda": "Funil de cobrança em Kanban, com valor em aberto por etapa, dias em atraso, acordos e prazo (SLA) de cada cobrança"
+    },
+    {
+      "arquivo": "02-detalhe-cobranca.png",
+      "legenda": "Detalhe da cobrança: valor, dias e parcelas em atraso, dados do devedor e histórico de contatos"
+    },
+    {
+      "arquivo": "03-relatorios.png",
+      "legenda": "Relatórios & KPIs: valor em aberto, valor recuperado, taxas de recuperação e perda e cobranças por etapa"
+    },
+    {
+      "arquivo": "04-encerrados.png",
+      "legenda": "Fechamento do mês: cobranças recuperadas e perdidas e o resultado de cada operador"
+    },
+    {
+      "arquivo": "05-fila.png",
+      "legenda": "Fila de inadimplentes importada da planilha, pronta para distribuição automática entre os operadores"
+    },
+    {
+      "arquivo": "06-minhas-atividades.png",
+      "legenda": "Agenda de ligações, retornos e tarefas vinculadas aos devedores em cobrança"
+    }
+  ],
+  "dor": "Cobrança feita por planilhas de cada unidade, sem histórico de contatos, sem controle de acordos e sem visão do valor recuperado.",
+  "entregas": [
+    {
+      "ico": "list",
+      "titulo": "Fila priorizada",
+      "texto": "Por meses em atraso ou valor da dívida, direto da planilha."
+    },
+    {
+      "ico": "shuffle",
+      "titulo": "Distribuição automática",
+      "texto": "Até 5 cobranças por operador, com envio manual pelo gestor."
+    },
+    {
+      "ico": "kanban",
+      "titulo": "Kanban de cobrança",
+      "texto": "Arrastar e soltar, SLA e valor em aberto por coluna."
+    },
+    {
+      "ico": "check",
+      "titulo": "Registro de acordos",
+      "texto": "Entrada + parcelas em boleto, cartão ou Pix."
+    },
+    {
+      "ico": "calendar",
+      "titulo": "Agenda de retornos",
+      "texto": "Ligações e próximas ações ligadas a cada cobrança."
+    },
+    {
+      "ico": "chart",
+      "titulo": "Relatórios & KPIs",
+      "texto": "Valor recuperado, taxas de recuperação e faixas de atraso."
+    },
+    {
+      "ico": "users",
+      "titulo": "Fechamento por operador",
+      "texto": "Produtividade mensal e acesso por papel."
+    }
   ]
 }

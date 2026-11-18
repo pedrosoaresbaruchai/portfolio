@@ -5,3 +5,4 @@ _demo/
 **/.venv/
 **/__pycache__/
 *.log
+tools/rec_*.py

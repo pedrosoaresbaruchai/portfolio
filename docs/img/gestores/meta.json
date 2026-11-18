@@ -13,13 +13,77 @@
     "Cadastro e apuração de campanhas de pontos por forma de pagamento, com ranking de consultores e exportação em PDF",
     "Integração com várias bases do ERP, tema claro/escuro e atualização automática após cada carga"
   ],
-  "stack": ["Python", "Plotly Dash", "Pandas", "Firebird", "fpdf2", "Docker", "Gunicorn"],
+  "stack": [
+    "Python",
+    "Plotly Dash",
+    "Pandas",
+    "Firebird",
+    "fpdf2",
+    "Docker",
+    "Gunicorn"
+  ],
   "telas": [
-    {"arquivo": "01-consultores.png", "legenda": "Tela principal: tendência dos consultores nos últimos 3 meses e ranking da equipe com mix de pagamento"},
-    {"arquivo": "02-visao-gerencial.png", "legenda": "Visão gerencial de um consultor: KPIs do trimestre, vendas por mês e forma de pagamento e posição no ranking"},
-    {"arquivo": "03-status-report-dia.png", "legenda": "Status report do dia por unidade, com formas de pagamento e consultores, exportável em PDF"},
-    {"arquivo": "04-vendas-do-dia.png", "legenda": "Vendas do dia: contratos, consultores ativos, formas de pagamento e comparação com a semana anterior"},
-    {"arquivo": "05-mes-por-unidade.png", "legenda": "Vendas acumuladas no mês por unidade, comparadas dia a dia com o mês anterior"},
-    {"arquivo": "06-campanha.png", "legenda": "Resultado de uma campanha de incentivo: pontos por forma de pagamento, por unidade e ranking de consultores"}
+    {
+      "arquivo": "01-consultores.png",
+      "legenda": "Tela principal: tendência dos consultores nos últimos 3 meses e ranking da equipe com mix de pagamento"
+    },
+    {
+      "arquivo": "02-visao-gerencial.png",
+      "legenda": "Visão gerencial de um consultor: KPIs do trimestre, vendas por mês e forma de pagamento e posição no ranking"
+    },
+    {
+      "arquivo": "03-status-report-dia.png",
+      "legenda": "Status report do dia por unidade, com formas de pagamento e consultores, exportável em PDF"
+    },
+    {
+      "arquivo": "04-vendas-do-dia.png",
+      "legenda": "Vendas do dia: contratos, consultores ativos, formas de pagamento e comparação com a semana anterior"
+    },
+    {
+      "arquivo": "05-mes-por-unidade.png",
+      "legenda": "Vendas acumuladas no mês por unidade, comparadas dia a dia com o mês anterior"
+    },
+    {
+      "arquivo": "06-campanha.png",
+      "legenda": "Resultado de uma campanha de incentivo: pontos por forma de pagamento, por unidade e ranking de consultores"
+    }
+  ],
+  "dor": "Sem visão única da equipe: saber quem vende, quem está caindo e como o mês se compara ao anterior exigia relatórios manuais.",
+  "entregas": [
+    {
+      "ico": "trophy",
+      "titulo": "Ranking de consultores",
+      "texto": "Contratos vendidos e mix de formas de pagamento."
+    },
+    {
+      "ico": "alert",
+      "titulo": "Tendência automática",
+      "texto": "Detecta crescimento, queda contínua e queda forte no mês."
+    },
+    {
+      "ico": "bulb",
+      "titulo": "Visão gerencial",
+      "texto": "KPIs do trimestre e leitura gerencial gerada automaticamente."
+    },
+    {
+      "ico": "calendar",
+      "titulo": "Dia e semana",
+      "texto": "Comparativo com a semana anterior e status report em PDF."
+    },
+    {
+      "ico": "chart",
+      "titulo": "Acumulado por unidade",
+      "texto": "Evolução dia a dia contra o mês anterior."
+    },
+    {
+      "ico": "star",
+      "titulo": "Campanhas de pontos",
+      "texto": "Apuração automática, ranking e exportação em PDF."
+    },
+    {
+      "ico": "refresh",
+      "titulo": "Sempre atualizado",
+      "texto": "Integra várias bases do ERP e atualiza após cada carga."
+    }
   ]
 }

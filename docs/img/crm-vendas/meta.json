@@ -13,13 +13,78 @@
     "Permissões por papel (administrador, gestor, vendedor), com etapas, perguntas e templates de e-mail configuráveis",
     "Login único (SSO) integrado ao portal da empresa"
   ],
-  "stack": ["Node.js", "Express", "Prisma", "PostgreSQL", "HTML/CSS/JavaScript", "Chart.js", "Nginx", "Docker Compose"],
+  "stack": [
+    "Node.js",
+    "Express",
+    "Prisma",
+    "PostgreSQL",
+    "HTML/CSS/JavaScript",
+    "Chart.js",
+    "Nginx",
+    "Docker Compose"
+  ],
   "telas": [
-    {"arquivo": "01-funil-kanban.png", "legenda": "Funil de vendas B2C em Kanban, com SLA calculado em cada card"},
-    {"arquivo": "02-funil-b2b.png", "legenda": "Pipeline corporativo (B2B) com lead score, tags e próxima ação"},
-    {"arquivo": "03-detalhe-lead.png", "legenda": "Detalhe da negociação com dados editáveis, responsável e histórico de anotações"},
-    {"arquivo": "04-leads-b2b.png", "legenda": "Carteira de empresas B2B com a etapa atual de cada uma no funil"},
-    {"arquivo": "05-relatorios.png", "legenda": "Relatórios e KPIs: conversão, perda, aderência de SLA e cards por etapa"},
-    {"arquivo": "06-atividades.png", "legenda": "Agenda de atividades do time vinculadas aos leads"}
+    {
+      "arquivo": "01-funil-kanban.png",
+      "legenda": "Funil de vendas B2C em Kanban, com SLA calculado em cada card"
+    },
+    {
+      "arquivo": "02-funil-b2b.png",
+      "legenda": "Pipeline corporativo (B2B) com lead score, tags e próxima ação"
+    },
+    {
+      "arquivo": "03-detalhe-lead.png",
+      "legenda": "Detalhe da negociação com dados editáveis, responsável e histórico de anotações"
+    },
+    {
+      "arquivo": "04-leads-b2b.png",
+      "legenda": "Carteira de empresas B2B com a etapa atual de cada uma no funil"
+    },
+    {
+      "arquivo": "05-relatorios.png",
+      "legenda": "Relatórios e KPIs: conversão, perda, aderência de SLA e cards por etapa"
+    },
+    {
+      "arquivo": "06-atividades.png",
+      "legenda": "Agenda de atividades do time vinculadas aos leads"
+    }
+  ],
+  "dor": "Leads controlados em planilha e WhatsApp, sem saber em que etapa estava cada negociação nem quais estavam paradas.",
+  "entregas": [
+    {
+      "ico": "kanban",
+      "titulo": "Funil Kanban",
+      "texto": "Pipelines B2C e B2B, da entrada do lead à expansão de conta."
+    },
+    {
+      "ico": "clock",
+      "titulo": "SLA por etapa",
+      "texto": "Alertas visuais: no prazo, em risco, atrasado e crítico."
+    },
+    {
+      "ico": "users",
+      "titulo": "Clientes e empresas",
+      "texto": "Vários contatos, histórico de negociações e anotações."
+    },
+    {
+      "ico": "calendar",
+      "titulo": "Agenda de atividades",
+      "texto": "Ligações, reuniões e e-mails vinculados a cada lead."
+    },
+    {
+      "ico": "chart",
+      "titulo": "Relatórios e KPIs",
+      "texto": "Conversão, perda, SLA, origem e motivos de perda."
+    },
+    {
+      "ico": "lock",
+      "titulo": "Permissões por papel",
+      "texto": "Etapas, perguntas e templates de e-mail configuráveis."
+    },
+    {
+      "ico": "key",
+      "titulo": "Login único (SSO)",
+      "texto": "Integrado ao portal da empresa, sem senha extra."
+    }
   ]
 }

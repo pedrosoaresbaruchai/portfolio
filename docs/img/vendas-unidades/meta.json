@@ -50,5 +50,43 @@
       "arquivo": "06-comissao.png",
       "legenda": "Comissão por gerente: direito calculado pelas regras, contratos vendidos e saldo do mês"
     }
+  ],
+  "dor": "Vendas espalhadas em uma base por unidade: a gestão só sabia no fim do mês se a meta seria batida.",
+  "entregas": [
+    {
+      "ico": "db",
+      "titulo": "Bases consolidadas",
+      "texto": "Junta todas as unidades, com recarga programada e tolerância a falhas."
+    },
+    {
+      "ico": "trend",
+      "titulo": "Projeção de fechamento",
+      "texto": "KPIs contra o mês anterior e projeção pelo ritmo de dias úteis."
+    },
+    {
+      "ico": "users",
+      "titulo": "Consultores",
+      "texto": "Ranking, tendência, vendas do dia e campanhas de incentivo."
+    },
+    {
+      "ico": "money",
+      "titulo": "Saldos por canal",
+      "texto": "Saldo de contratos de cada canal, com regras por vigência."
+    },
+    {
+      "ico": "percent",
+      "titulo": "Comissão automática",
+      "texto": "Por gerente e forma de pagamento, com regras editáveis na tela."
+    },
+    {
+      "ico": "tv",
+      "titulo": "TVs da sala de vendas",
+      "texto": "Acesso por link seguro e exportação em PDF e Excel."
+    },
+    {
+      "ico": "sun",
+      "titulo": "Tema claro e escuro",
+      "texto": "Design system próprio, com paleta acessível a daltônicos."
+    }
   ]
 }
